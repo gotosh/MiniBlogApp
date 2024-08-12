@@ -1,0 +1,30 @@
+#ifndef POST_HPP
+#define POST_HPP
+
+#include <string>
+#include <fstream>
+#include <iostream>
+
+class Post
+{
+private:
+    std::string title;
+    std::string content;
+    std::string author;
+    std::string timestamp;
+public:
+    Post(const std::string& title, const std::string& content, const std::string& author, const std::string& timestamp);
+    ~Post();
+    void saveToFile();
+    void loadFromFile(const std::string& filename);
+    void edit(const std::string& newContent);
+    void deletePost();
+
+    std::string getTitle() const;
+    std::string getAuthor() const;
+    std::string getTimestamp() const;
+    std::string getContent() const;
+};
+
+
+#endif // POST_HPP
