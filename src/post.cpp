@@ -9,8 +9,8 @@
 
 namespace fs = std::filesystem;
 
-Post::Post(const std::string& title, const std::string& content, const std::string& author)
-    : title(title), content(content), author(author)
+Post::Post(int id, const std::string& title, const std::string& content, const std::string& author)
+    : id(id), title(title), content(content), author(author)
 {
     auto now = std::chrono::system_clock::now();
     std::time_t end_time = std::chrono::system_clock::to_time_t(now);
@@ -94,9 +94,26 @@ void Post::deletePost() {
     
 }
 
-std::string getPost(){
+int Post::getId() const {
+    return id;
+}
+
+std::string Post::getTitle() const {
+    return title;
+}
+
+std::string Post::getAuthor() const {
+    return author;
+}
+
+std::string Post::getContent() const {
     return content;
 }
+
+std::string Post::getTimestamp() const {
+    return timestamp;
+}
+
 Post::~Post()
 {
 }
