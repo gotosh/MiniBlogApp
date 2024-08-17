@@ -23,8 +23,7 @@ User::User(const std::string& username, const std::string& password) : username(
         }
             
     }
-    std::cout << userDatabase[username] << std::endl; 
-    
+   
 }
 
 bool User::login(const std::string& inputUsername, const std::string& inputPassword) {
@@ -53,16 +52,6 @@ bool User::registerUser(const std::string& newUsername, const std::string& newPa
     std::cout << "User registered successfully!" << std::endl;
     return true;
     
-    
-    std::ofstream ofs(user_filename);
-    if (!ofs)
-    {
-        std::cout << "User data file cannot be opened!" << std::endl;
-        return false;
-    }
-    ofs << newUsername << std::endl;
-    std::cout << "Username has written in the file!" << std::endl;
-    return false;
 }
 
 std::string User::getUsername() const {

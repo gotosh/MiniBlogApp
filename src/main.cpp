@@ -12,7 +12,7 @@ int main(){
    std::cout << "hello world! open" << std::endl;
    User user1("username1", "password");
    user1.registerUser("user2", "passwod");
-   Post post1("My first Post", "This is the current of my first post.", user1.getUsername(), st);
+   Post post1("My first Post", "This is the current of my first post.", user1.getUsername());
 
 }
 

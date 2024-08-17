@@ -13,7 +13,7 @@ private:
     std::string author;
     std::string timestamp;
 public:
-    Post(const std::string& title, const std::string& content, const std::string& author, const std::string& timestamp);
+    Post(const std::string& title, const std::string& content, const std::string& author);
     ~Post();
     void saveToFile();
     void loadFromFile(const std::string& filename);
@@ -24,6 +24,7 @@ public:
     std::string getAuthor() const;
     std::string getTimestamp() const;
     std::string getContent() const;
+    std::string getPost() const;
 };
 
 
