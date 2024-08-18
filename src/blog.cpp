@@ -2,7 +2,7 @@
 #include <iostream>
 #include <iomanip>
 
-// 投稿の一覧を表示する
+// Display all posts
 void Blog::displayPosts() const {
     std::cout << "=== Post List ===" << std::endl;
 
@@ -14,7 +14,7 @@ void Blog::displayPosts() const {
     std::cout << "=================" << std::endl;
 }
 
-// 特定の投稿を表示する
+// Display a specific post
 void Blog::viewPost(int postId) const {
     for (const auto& post : posts) {
         if (post.getId() == postId) {
@@ -30,21 +30,49 @@ void Blog::viewPost(int postId) const {
     std::cerr << "Error: Post with ID " << postId << " not found." << std::endl;
 }
 
-// ユーザーを追加する
+// Add user
 void Blog::addUser(const User& user) {
     users.push_back(user);
 }
 
-// 投稿を追加する
+// Add post
 void Blog::addPost(const Post& post) {
     posts.push_back(post);
 }
 
-// コンストラクタとデストラクタ (必要に応じて実装)
+// Edit post
+void Blog::editPost(int postId, const std::string& newContent) {
+    for (auto& post : posts)
+    {
+        if (post.getId() == postId) /// Looking for the correspond post
+        {
+            post.edit(newContent);
+            std::cout << "Post edited successfully!" << std::endl;
+            return;
+        }
+    }
+}
+
+// Delete post
+void Blog::deletePost(int postId){
+    for (auto it = posts.begin(); it != posts.end(); it++)
+    {
+        if (it->getId() == postId)
+        {
+            posts.erase(it);
+            std::cout << "Post deleted successfully!" << std::endl;
+            return;
+        }
+        
+    }
+    std::cout << "Post not found!" << std::endl; // If not found match post.
+    
+}
+
+// Constructa and destructa 
 Blog::Blog() {
-    // 初期化処理 (必要であれば)
+    // initialize
 }
 
 Blog::~Blog() {
-    // 後処理 (必要であれば)
 }

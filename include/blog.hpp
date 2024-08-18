@@ -24,8 +24,14 @@ public:
     // Add post
     void addPost(const Post& post);
 
+    // Edit post
+    void editPost(int postId, const std::string& newContent);
+
+    // Delete post
+    void deletePost(int postId);
+
 private:
-    // ユーザーと投稿を格納するベクター
+    // Vector for contain users and posts
     std::vector<User> users;
     std::vector<Post> posts;
 };
