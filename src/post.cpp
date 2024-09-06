@@ -21,7 +21,7 @@ Post::Post(int id, const std::string& title, const std::string& content, const s
 // To save post into file
 void Post::saveToFile(){
     // Process that save post data to file
-    std::string filename = "data/posts/" + title + ".txt";
+    std::string filename = "data/posts/" + std::to_string(id) + ".txt";
 
     std::ofstream file(filename);
     if (!file)

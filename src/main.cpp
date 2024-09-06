@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <set>
 #include "user.hpp"
 #include "post.hpp"
 #include "blog.hpp"
@@ -82,6 +83,11 @@ int main() {
                 std::cout << "Invalid option, please try again." << std::endl;
                 break;
         }
+        if (std::set<int>{1, 2, 3, 4, 5, 6}.count(choice) == 0)
+        {
+            break;
+        }
+        
     }
 
     return 0;
