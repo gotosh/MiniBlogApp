@@ -20,3 +20,6 @@ mini_blog_system/
 │
 └── docs/
     └── source.md
+
+```
+### 2. **Class explanation** 

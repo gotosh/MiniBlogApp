@@ -14,6 +14,7 @@ std::string id::generate_id() {
     std::tm now_tm = *std::localtime(&now_time_t);
     std::stringstream ss;
     ss << std::put_time(&now_tm, "%Y%m%d-%H%M%S");
+    std::string id = ss.str();
     
-    return ss.str();
+    return id;
 }

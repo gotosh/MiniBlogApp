@@ -16,7 +16,7 @@ public:
     void displayPosts() const;
 
     // View specific post
-    void viewPost(int postId) const;
+    void viewPost(std::string postId) const;
 
     // Add user
     void addUser(const User& user);
@@ -25,10 +25,10 @@ public:
     void addPost(const Post& post);
 
     // Edit post
-    void editPost(int postId, const std::string& newContent);
+    void editPost(std::string postId, const std::string& newContent);
 
     // Delete post
-    void deletePost(int postId);
+    void deletePost(std::string postId);
 
 private:
     // Vector for contain users and posts

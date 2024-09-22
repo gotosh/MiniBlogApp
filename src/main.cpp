@@ -36,7 +36,7 @@ int main() {
                 std::cout << "Enter author: ";
                 std::getline(std::cin, author);
 
-                Post newPost(1, title, content, author);
+                Post newPost("test", title, content, author);
                 blog.addPost(newPost);
                 newPost.saveToFile(); // Save to file
                 std::cout << "Post created successfully!" << std::endl;
@@ -47,14 +47,14 @@ int main() {
                 break;
             }
             case 3: {
-                int postId;
+                std::string postId;
                 std::cout << "Enter post ID: ";
                 std::cin >> postId;
                 blog.viewPost(postId);
                 break;
             }
             case 4: {
-                int postId;
+                std::string postId;
                 std::cin.ignore(); // Remove newline character left in the buffer
                 std::string newContent;
                 std::cout << "Enter post ID to edit: ";
@@ -69,7 +69,7 @@ int main() {
                 break;
             }
             case 5: {
-                int postId;
+                std::string postId;
                 std::cout << "Enter post ID to delete: ";
                 std::cin >> postId;
                 blog.deletePost(postId);

@@ -13,6 +13,7 @@ set(SOURCES
     src/user.cpp
     src/post.cpp
     src/blog.cpp
+    src/id.cpp
 )
 
 ### Create executable file

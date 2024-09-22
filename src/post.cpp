@@ -9,7 +9,7 @@
 
 namespace fs = std::filesystem;
 
-Post::Post(int id, const std::string& title, const std::string& content, const std::string& author)
+Post::Post(std::string id, const std::string& title, const std::string& content, const std::string& author)
     : id(id), title(title), content(content), author(author)
 {
     auto now = std::chrono::system_clock::now();
@@ -21,7 +21,7 @@ Post::Post(int id, const std::string& title, const std::string& content, const s
 // To save post into file
 void Post::saveToFile(){
     // Process that save post data to file
-    std::string filename = "data/posts/" + std::to_string(id) + ".txt";
+    std::string filename = "data/posts/" + id + ".txt";
 
     std::ofstream file(filename);
     if (!file)
@@ -30,7 +30,7 @@ void Post::saveToFile(){
         return;
     }
     file << "Title: " << title << std::endl;
-    file << "Coontent" << content << std::endl;
+    file << "Content: " << content << std::endl;
     file << "Author: " << author << std::endl;
     file << "Timestamp: " << timestamp << std::endl;
 
@@ -94,7 +94,7 @@ void Post::deletePost() {
     
 }
 
-int Post::getId() const {
+std::string Post::getId() const {
     return id;
 }
 

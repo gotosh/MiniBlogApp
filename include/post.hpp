@@ -12,16 +12,16 @@ private:
     std::string content;
     std::string author;
     std::string timestamp;
-    int id;
+    std::string id;
 public:
-    Post(int id, const std::string& title, const std::string& content, const std::string& author);
+    Post(std::string id, const std::string& title, const std::string& content, const std::string& author);
     ~Post();
     void saveToFile();
     void loadFromFile(const std::string& filename);
     void edit(const std::string& newContent);
     void deletePost();
 
-    int getId() const;
+    std::string getId() const;
     std::string getTitle() const;
     std::string getAuthor() const;
     std::string getTimestamp() const;

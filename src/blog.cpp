@@ -15,7 +15,7 @@ void Blog::displayPosts() const {
 }
 
 // Display a specific post
-void Blog::viewPost(int postId) const {
+void Blog::viewPost(std::string postId) const {
     for (const auto& post : posts) {
         if (post.getId() == postId) {
             std::cout << "=== Viewing Post ===" << std::endl;
@@ -41,7 +41,7 @@ void Blog::addPost(const Post& post) {
 }
 
 // Edit post
-void Blog::editPost(int postId, const std::string& newContent) {
+void Blog::editPost(std::string postId, const std::string& newContent) {
     for (auto& post : posts)
     {
         if (post.getId() == postId) /// Looking for the correspond post
@@ -54,7 +54,7 @@ void Blog::editPost(int postId, const std::string& newContent) {
 }
 
 // Delete post
-void Blog::deletePost(int postId){
+void Blog::deletePost(std::string postId){
     for (auto it = posts.begin(); it != posts.end(); it++)
     {
         if (it->getId() == postId)
